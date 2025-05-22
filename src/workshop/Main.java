@@ -1,3 +1,5 @@
+package workshop;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -34,6 +36,12 @@ public class Main {
             proList.add("index" + i);
         }
 
+        System.out.println(proList);
+
+        System.out.println(proList.get(0));
+        System.out.println(proList.get(proList.size() - 1));
+
+        proList.add(proList.size(), "Конец списка");
         System.out.println(proList);
     }
 }
