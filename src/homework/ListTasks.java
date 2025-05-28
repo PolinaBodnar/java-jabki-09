@@ -15,13 +15,17 @@ public class ListTasks {
 
     // Вывести третий элемент списка
     public static Integer getThirdElement(List<Integer> list) {
-        if (list.size() < 3) throw new IndexOutOfBoundsException("Меньше 3 элементов");
+        if (list.size() < 3) {
+            throw new IndexOutOfBoundsException("Меньше 3 элементов");
+        }
         return list.get(2);
     }
 
     // Удалить второй элемент списка и вывести оставшиеся
     public static List<Integer> removeSecondElement(List<Integer> list) {
-        if (list.size() < 2) return list;
+        if (list.size() < 2) {
+            return list;
+        }
         list.remove(1);
         return list;
     }
@@ -68,10 +72,12 @@ public class ListTasks {
     }
 
     // Количество элементов > N
-    public static int countGreaterThan(List<Integer> list, int N) {
+    public static int countGreaterThan(List<Integer> list, int n) {
         int count = 0;
-        for (int n : list) {
-            if (n > N) count++;
+        for (int item : list) {
+            if (item > n) {
+                count++;
+            }
         }
         return count;
     }
