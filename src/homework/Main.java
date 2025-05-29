@@ -27,12 +27,17 @@ public class Main {
         // 5. Кол-во семерок
         System.out.println("Количество семерок: " + ListTasks.countSevens(list));
 
+        System.out.println("Количество 7 (нет): " + ListTasks.countSevens(Arrays.asList(1, 2, 3)));
+
         // 6. Проверка наличия 42
         System.out.println("Содержит 42? " + ListTasks.contains42(list));
 
         // 7. Минимум и максимум
         int[] mm = ListTasks.minMax(list);
         System.out.println("Мин: " + mm[0] + ", Макс: " + mm[1]);
+
+        List<Integer> oneItemList = Arrays.asList(99);
+        System.out.println("Мин/Макс одного элемента: " + Arrays.toString(ListTasks.minMax(oneItemList)));
 
         // 8. Удалить все четные
         list = ListTasks.removeEven(list);
@@ -55,6 +60,10 @@ public class Main {
         // 12. Инвертировать список
         System.out.println("Инвертированный список: " + ListTasks.invertList(fromArr));
 
+        List<Object> empty = new ArrayList<>();
+        System.out.println("Инвертированный пустой список: " + ListTasks.invertList(empty));
+
+
         // 13. Объединение без дубликатов
         List<Integer> l1 = Arrays.asList(1,2,3);
         List<Integer> l2 = Arrays.asList(3,4,5);
@@ -66,5 +75,8 @@ public class Main {
         // 15. Фильтр по первой букве "А"
         List<String> rusStrings = Arrays.asList("Апельсин", "Банан", "Автобус", "Арбуз", "Машина");
         System.out.println("Строки, начинающиеся на 'А': " + ListTasks.filterByFirstLetterA(rusStrings));
+
+        List<String> mixedCase = Arrays.asList("арбуз", "Арфа", "Аптека", "алгебра", "Атлас");
+        System.out.println("Строки с 'А': " + ListTasks.filterByFirstLetterA(mixedCase));
     }
 }

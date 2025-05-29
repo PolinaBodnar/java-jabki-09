@@ -26,10 +26,10 @@ public class ListTasks {
         return list;
     }
 
-    public static int sumList(List list) {
+    public static int sumList(List<Integer> list) {
         int sum = 0;
-        for (Object obj : list) {
-            sum += (Integer) obj;
+        for (int num : list) {
+            sum += num;
         }
         return sum;
     }
