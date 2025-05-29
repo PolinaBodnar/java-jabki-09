@@ -1,25 +1,24 @@
 package homework;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ListTasks {
 
-    public static void printList(List list) {
+    public static void printList(List<?> list) {
         for (Object obj : list) {
             System.out.print(obj + " ");
         }
         System.out.println();
     }
 
-    public static Integer getThirdElement(List list) {
+    public static Integer getThirdElement(List<Integer> list) {
         if (list.size() < 3) {
             throw new IndexOutOfBoundsException("Меньше 3 элементов");
         }
-        return (Integer) list.get(2);
+        return list.get(2);
     }
 
-    public static List removeSecondElement(List list) {
+    public static List<Integer> removeSecondElement(List<Integer> list) {
         if (list.size() >= 2) {
             list.remove(1);
         }
@@ -34,28 +33,27 @@ public class ListTasks {
         return sum;
     }
 
-    public static int countSevens(List list) {
+    public static int countSevens(List<Integer> list) {
         int count = 0;
-        for (Object obj : list) {
-            if (((Integer) obj) == 7) {
+        for (int val : list) {
+            if (val == 7) {
                 count++;
             }
         }
         return count;
     }
 
-    public static boolean contains42(List list) {
+    public static boolean contains42(List<Integer> list) {
         return list.contains(42);
     }
 
-    public static int[] minMax(List list) {
+    public static int[] minMax(List<Integer> list) {
         if (list.isEmpty()) {
             throw new NoSuchElementException("Пустой список");
         }
-        int min = (Integer) list.get(0);
-        int max = (Integer) list.get(0);
-        for (int i = 1; i < list.size(); i++) {
-            int val = (Integer) list.get(i);
+        int min = list.get(0);
+        int max = list.get(0);
+        for (int val : list) {
             if (val < min) {
                 min = val;
             } else if (val > max) {
@@ -65,10 +63,9 @@ public class ListTasks {
         return new int[]{min, max};
     }
 
-    public static List removeEven(List list) {
-        List result = new ArrayList();
-        for (Object obj : list) {
-            int val = (Integer) obj;
+    public static List<Integer> removeEven(List<Integer> list) {
+        List<Integer> result = new ArrayList<>();
+        for (int val : list) {
             if (val % 2 != 0) {
                 result.add(val);
             }
@@ -76,18 +73,17 @@ public class ListTasks {
         return result;
     }
 
-    public static List fromArray(int[] arr) {
-        List list = new ArrayList();
-        for (int i = 0; i < arr.length; i++) {
-            list.add(arr[i]);
+    public static List<Integer> fromArray(int[] arr) {
+        List<Integer> list = new ArrayList<>();
+        for (int i : arr) {
+            list.add(i);
         }
         return list;
     }
 
-    public static int countGreaterThan(List list, int n) {
+    public static int countGreaterThan(List<Integer> list, int n) {
         int count = 0;
-        for (Object obj : list) {
-            int val = (Integer) obj;
+        for (int val : list) {
             if (val > n) {
                 count++;
             }
@@ -95,10 +91,9 @@ public class ListTasks {
         return count;
     }
 
-    public static List filterLongStrings(List list) {
-        List result = new ArrayList();
-        for (Object obj : list) {
-            String str = (String) obj;
+    public static List<String> filterLongStrings(List<String> list) {
+        List<String> result = new ArrayList<>();
+        for (String str : list) {
             if (str.length() > 5) {
                 result.add(str);
             }
@@ -106,25 +101,24 @@ public class ListTasks {
         return result;
     }
 
-    public static List invertList(List list) {
-        List inverted = new ArrayList();
+    public static List<?> invertList(List<?> list) {
+        List<Object> inverted = new ArrayList<>();
         for (int i = list.size() - 1; i >= 0; i--) {
             inverted.add(list.get(i));
         }
         return inverted;
     }
 
-    public static List unionNoDuplicates(List list1, List list2) {
-        Set set = new LinkedHashSet();
+    public static List<?> unionNoDuplicates(List<?> list1, List<?> list2) {
+        Set<Object> set = new LinkedHashSet<>();
         set.addAll(list1);
         set.addAll(list2);
-        return new ArrayList(set);
+        return new ArrayList<>(set);
     }
 
-    public static int sumOdd(List list) {
+    public static int sumOdd(List<Integer> list) {
         int sum = 0;
-        for (Object obj : list) {
-            int val = (Integer) obj;
+        for (int val : list) {
             if (val % 2 != 0) {
                 sum += val;
             }
@@ -132,10 +126,9 @@ public class ListTasks {
         return sum;
     }
 
-    public static List filterByFirstLetterA(List list) {
-        List result = new ArrayList();
-        for (Object obj : list) {
-            String str = (String) obj;
+    public static List<String> filterByFirstLetterA(List<String> list) {
+        List<String> result = new ArrayList<>();
+        for (String str : list) {
             if (str.startsWith("А")) {
                 result.add(str);
             }
