@@ -1,3 +1,5 @@
+package workshop;
+
 import java.util.Arrays;
 
 public class ProArrayList {
@@ -20,17 +22,29 @@ public class ProArrayList {
 
     // TODO
     public int size() {
-        return 0;
+        return size;
     }
 
     // TODO
     public void add(int index, String element) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Неверный индекс: " + index);
+        }
+        provideCapacity();
 
+        for (int i = size - 1; i >= index; i--) {
+            data[i + 1] = data[i];
+        }
+
+        data[index] = element;
+        size++;
     }
 
     // TODO
-    public String get(int index) {
-        return null;
+    public String get(int index) {if (index < 0 || index >= size) {
+        throw new IndexOutOfBoundsException("Неверный индекс: " + index);
+    }
+        return data[index];
     }
 
     @Override
